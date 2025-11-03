@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Туған күніңмен, Анашым!</title>
+<title>С Днем Рождения, Мама!</title>
 <style>
   /* Google Fonts */
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Great+Vibes&display=swap');
@@ -16,7 +16,7 @@
 
   body {
     margin: 0;
-    font-family: 'Montserrat', 'Noto Sans', 'Arial', sans-serif;
+    font-family: 'Noto Sans', 'Arial', sans-serif;
     background: url('фон.jpg') center/cover no-repeat;
     overflow-x: hidden;
     position: relative;
@@ -93,7 +93,7 @@
   .show { display: block; opacity: 1; }
 
   h1 {
-    font-family: 'Great Vibes', 'Noto Sans', cursive;
+    font-family: 'Great Vibes', cursive;
     font-size: 3.6rem;
     color: var(--accent);
     text-shadow: 2px 2px 6px rgba(255,140,180,.35);
@@ -154,7 +154,7 @@
   .gallery-title {
     width: 100%;
     text-align: center;
-    font-family: 'Great Vibes', 'Noto Sans', cursive;
+    font-family: 'Great Vibes', cursive;
     font-size: 2.1rem;
     color: var(--accent);
     margin: 36px 0 6px;
@@ -232,33 +232,33 @@
   <div class="envelope" onclick="openEnvelope()">
     <div class="heart"></div>
   </div>
-  <div class="open-text">Хатты ашыңыз 💌</div>
+  <div class="open-text">Откройте письмо 💌</div>
 </div>
 
 <div class="container" id="mainContent">
-  <h1>Туған күніңізбен, Анашым!</h1>
-  <img src="mom.jpg" alt="Анашымның суреті" class="photo-mom">
+  <h1>С Днем Рождения, Мама!</h1>
+  <img src="mom.jpg" alt="Фото мамы" class="photo-mom">
 
-  <p class="lead">Қымбатты анашым, бүгін сіздің 55 жасыңыз құтты, хайырлы болсын! Әр күніңіз шаттыққа, мейірім мен жылулыққа толы болсын. Біз сізді шексіз жақсы көреміз ❤️</p>
+  <p class="lead">Дорогая мама, поздравляем вас с 55-летием! Пусть каждый день будет наполнен радостью, теплом и любовью. Мы бесконечно вас любим ❤️</p>
 
-  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎶 Әуенді қосу</button>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎶 Включить музыку</button>
   <audio id="music" src="happy-birthday-401919.mp3" preload="auto" loop></audio>
 
   <div class="gallery">
-    <div class="gallery-title">Бірге өткізген бақытты сәттеріміз 💖</div>
-    <img src="family1.jpg" alt="Семейлік сәт 1">
-    <img src="family2.jpg" alt="Семейлік сәт 2">
-    <img src="family3.jpg" alt="Семейлік сәт 3">
+    <div class="gallery-title">Счастливые моменты вместе 💖</div>
+    <img src="family1.jpg" alt="Семейный момент 1">
+    <img src="family2.jpg" alt="Семейный момент 2">
+    <img src="family3.jpg" alt="Семейный момент 3">
 
-    <div class="gallery-title">Жанұямыздың мейірімге толы сәттері 🌸</div>
-    <img src="family4.jpg" alt="Семейлік сәт 4">
-    <img src="family5.jpg" alt="Семейлік сәт 5">
-    <img src="family6.jpg" alt="Семейлік сәт 6">
+    <div class="gallery-title">Моменты тепла нашей семьи 🌸</div>
+    <img src="family4.jpg" alt="Семейный момент 4">
+    <img src="family5.jpg" alt="Семейный момент 5">
+    <img src="family6.jpg" alt="Семейный момент 6">
 
-    <div class="gallery-title">Анашым, сіз біздің жүрегіміздесіз 💞</div>
-    <img src="family7.jpg" alt="Семейлік сәт 7">
-    <img src="family8.jpg" alt="Семейлік сәт 8">
-    <img src="family9.jpg" alt="Семейлік сәт 9">
+    <div class="gallery-title">Мама, вы в нашем сердце 💞</div>
+    <img src="family7.jpg" alt="Семейный момент 7">
+    <img src="family8.jpg" alt="Семейный момент 8">
+    <img src="family9.jpg" alt="Семейный момент 9">
   </div>
 </div>
 
@@ -273,7 +273,7 @@ function openEnvelope(){
 function toggleMusic(){
   const m=document.getElementById('music');
   const btn=document.getElementById('musicBtn');
-  if(m.paused){ m.play(); btn.textContent="⏸ Әуенді тоқтату"; } else { m.pause(); btn.textContent="🎶 Әуенді қосу"; }
+  if(m.paused){ m.play(); btn.textContent="⏸ Остановить музыку"; } else { m.pause(); btn.textContent="🎶 Включить музыку"; }
 }
 
 function createHearts() {
@@ -302,4 +302,3 @@ function createHearts() {
 </script>
 </body>
 </html>
-
