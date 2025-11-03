@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>С Днем Рождения, Мама!</title>
+<title>Туған күніңмен, Анашым!</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap');
 
@@ -21,7 +21,6 @@
     position: relative;
   }
 
-  /* Размытие фона */
   body::before {
     content: "";
     position: fixed;
@@ -32,7 +31,6 @@
     z-index: -1;
   }
 
-  /* Конверт */
   .envelope-container {
     position: fixed; inset: 0;
     display: flex; align-items: center; justify-content: center; flex-direction: column;
@@ -81,7 +79,6 @@
     margin-top: 20px;
   }
 
-  /* Основной блок */
   .container {
     display: none;
     text-align: center;
@@ -142,7 +139,6 @@
 
   .music-btn:hover { transform: translateY(-3px); }
 
-  /* Галерея */
   .gallery {
     margin-top: 48px;
     display: flex;
@@ -179,7 +175,6 @@
     box-shadow: 0 20px 40px rgba(0,0,0,.28);
   }
 
-  /* Сердечки */
   .hearts {
     position: fixed;
     inset: 0;
@@ -236,30 +231,30 @@
   <div class="envelope" onclick="openEnvelope()">
     <div class="heart"></div>
   </div>
-  <div class="open-text">Открой письмо 💌</div>
+  <div class="open-text">Хатты ашыңыз 💌</div>
 </div>
 
 <div class="container" id="mainContent">
-  <h1>С Днем Рождения, Мама!</h1>
-  <img src="mom.jpg" alt="Фото мамы" class="photo-mom">
+  <h1>Туған күніңізбен, Анашым!</h1>
+  <img src="mom.jpg" alt= class="photo-mom">
 
-  <p class="lead">Дорогая мама, тебе сегодня 55 — прекрасный возраст! Пусть каждый день будет наполнен любовью, светом и улыбками ❤️</p>
+  <p class="lead">Қымбатты анашым, бүгін сіздің 55 жасыңыз құтты, хайырлы болсын! Әр күніңіз шаттыққа, мейірім мен жылулыққа толы болсын. Біз сізді шексіз жақсы көреміз ❤️</p>
 
-  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎶 Включить музыку</button>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎶 Әуенді қосу</button>
   <audio id="music" src="happy-birthday-401919.mp3" preload="auto" loop></audio>
 
   <div class="gallery">
-    <div class="gallery-title">Наши счастливые моменты 💖</div>
+    <div class="gallery-title">Бірге өткізген бақытты сәттеріміз 💖</div>
     <img src="family1.jpg" alt="">
     <img src="family2.jpg" alt="">
     <img src="family3.jpg" alt="">
 
-    <div class="gallery-title">Семейное тепло 🌸</div>
+    <div class="gallery-title">Жанұямыздың мейірімге толы сәттері 🌸</div>
     <img src="family4.jpg" alt="">
     <img src="family5.jpg" alt="">
     <img src="family6.jpg" alt="">
 
-    <div class="gallery-title">Мама — наше вдохновение 💞</div>
+    <div class="gallery-title">Анашым, сіз біздің жүрегіміздесіз 💞</div>
     <img src="family7.jpg" alt="">
     <img src="family8.jpg" alt="">
     <img src="family9.jpg" alt="">
@@ -277,7 +272,7 @@ function openEnvelope(){
 function toggleMusic(){
   const m=document.getElementById('music');
   const btn=document.getElementById('musicBtn');
-  if(m.paused){ m.play(); btn.textContent="⏸ Остановить музыку"; } else { m.pause(); btn.textContent="🎶 Включить музыку"; }
+  if(m.paused){ m.play(); btn.textContent="⏸ Әуенді тоқтату"; } else { m.pause(); btn.textContent="🎶 Әуенді қосу"; }
 }
 
 function createHearts() {
@@ -305,5 +300,4 @@ function createHearts() {
 }
 </script>
 </body>
-
 </html>
