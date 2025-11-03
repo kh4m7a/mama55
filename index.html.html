@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>С Днем Рождения, Мама!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap');
+
+  :root {
+    --pink-1: #dbc1cc;
+    --pink-2: #d1bfc8;
+    --accent: #d6336c;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: url('фон.jpg') center/cover no-repeat;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Размытие фона */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: inherit;
+    filter: blur(8px) brightness(1.1);
+    transform: scale(1.05);
+    z-index: -1;
+  }
+
+  /* Конверт */
+  .envelope-container {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    background: linear-gradient(135deg, #ffccd5, #ffe6eb);
+    z-index: 1000;
+    transition: opacity .8s ease;
+  }
+
+  .envelope {
+    width: 260px; height: 180px;
+    background: #deabc3;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.18);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .envelope::before {
+    content: '';
+    position: absolute; left: 0; right: 0; top: 0;
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+    border-bottom: 90px solid #ffb6c1;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .heart {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px; height: 34px;
+    background: #da779a;
+    border-radius: 6px;
+    clip-path: path('M24.4,5.3c-2.4-2.3-6.3-2.3-8.7,0l-0.7,0.7l-0.7-0.7C11.9,3,8,3,5.6,5.3c-2.4,2.3-2.4,6.1,0,8.4l0.7,0.7l8.7,8.5l8.7-8.5l0.7-0.7C26.8,11.4,26.8,7.6,24.4,5.3z');
+    animation: pulse 1.2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.15); }
+  }
+
+  .open-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.9rem;
+    color: var(--accent);
+    margin-top: 20px;
+  }
+
+  /* Основной блок */
+  .container {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity .8s ease .2s;
+  }
+
+  .show { display: block; opacity: 1; }
+
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.6rem;
+    color: var(--accent);
+    text-shadow: 2px 2px 6px rgba(255,140,180,.35);
+    margin-bottom: 5px;
+  }
+
+  .photo-mom {
+    width: 450px; height: 450px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 5px auto;
+    display: block;
+    border: 16px solid #fff;
+    outline: 10px solid #ff99c8;
+    box-shadow: 0 30px 60px rgba(0,0,0,.25), 0 0 30px rgba(255,153,200,.25);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+
+  .photo-mom:hover {
+    transform: scale(1.04);
+    box-shadow: 0 40px 70px rgba(0,0,0,.32), 0 0 45px rgba(255,130,190,.5);
+  }
+
+  p.lead {
+    font-size: 1.15rem;
+    color: #444;
+    max-width: 700px;
+    margin: 10px auto 25px;
+    line-height: 1.6;
+  }
+
+  .music-btn {
+    margin-top: 18px;
+    background: linear-gradient(90deg, #ff6fa0, #ff99c8);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(255,90,130,.25);
+    transition: transform .25s;
+  }
+
+  .music-btn:hover { transform: translateY(-3px); }
+
+  /* Галерея */
+  .gallery {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gallery-title {
+    width: 100%;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.1rem;
+    color: var(--accent);
+    margin: 36px 0 6px;
+  }
+
+  .gallery img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 10px solid #fff;
+    outline: 6px solid #ff99c8;
+    box-shadow: 0 14px 30px rgba(0,0,0,.18);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 20px 40px rgba(0,0,0,.28);
+  }
+
+  /* Сердечки */
+  .hearts {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .heart-shape {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff7aa2;
+    transform: rotate(45deg);
+    animation: floatUp 10s linear infinite;
+    opacity: 0.8;
+  }
+
+  .heart-shape::before,
+  .heart-shape::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff7aa2;
+    border-radius: 50%;
+  }
+
+  .heart-shape::before { top: -10px; left: 0; }
+  .heart-shape::after { left: -10px; top: 0; }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(45deg); opacity: 0.9; }
+    100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+  }
+
+  @media (max-width:900px){
+    .photo-mom{ width:320px; height:320px; }
+    .gallery img{ width:170px; height:170px; }
+  }
+
+  @media (max-width:480px){
+    .photo-mom{ width:260px; height:260px; }
+    h1{ font-size:2.6rem; }
+    .gallery img{ width:140px; height:140px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="envelope-container" id="envelopeContainer">
+  <div class="envelope" onclick="openEnvelope()">
+    <div class="heart"></div>
+  </div>
+  <div class="open-text">Открой письмо 💌</div>
+</div>
+
+<div class="container" id="mainContent">
+  <h1>С Днем Рождения, Мама!</h1>
+  <img src="mom.jpg" alt="Фото мамы" class="photo-mom">
+
+  <p class="lead">Дорогая мама, тебе сегодня 55 — прекрасный возраст! Пусть каждый день будет наполнен любовью, светом и улыбками ❤️</p>
+
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎶 Включить музыку</button>
+  <audio id="music" src="happy-birthday-401919.mp3" preload="auto" loop></audio>
+
+  <div class="gallery">
+    <div class="gallery-title">Наши счастливые моменты 💖</div>
+    <img src="family1.jpg" alt="">
+    <img src="family2.jpg" alt="">
+    <img src="family3.jpg" alt="">
+
+    <div class="gallery-title">Семейное тепло 🌸</div>
+    <img src="family4.jpg" alt="">
+    <img src="family5.jpg" alt="">
+    <img src="family6.jpg" alt="">
+
+    <div class="gallery-title">Мама — наше вдохновение 💞</div>
+    <img src="family7.jpg" alt="">
+    <img src="family8.jpg" alt="">
+    <img src="family9.jpg" alt="">
+  </div>
+</div>
+
+<script>
+function openEnvelope(){
+  const env=document.getElementById('envelopeContainer');
+  const main=document.getElementById('mainContent');
+  env.style.opacity='0';
+  setTimeout(()=>{ env.style.display='none'; main.classList.add('show'); main.style.display='block'; createHearts(); },700);
+}
+
+function toggleMusic(){
+  const m=document.getElementById('music');
+  const btn=document.getElementById('musicBtn');
+  if(m.paused){ m.play(); btn.textContent="⏸ Остановить музыку"; } else { m.pause(); btn.textContent="🎶 Включить музыку"; }
+}
+
+function createHearts() {
+  const container = document.getElementById('hearts');
+  for (let i = 0; i < 25; i++) {
+    const h = document.createElement('div');
+    h.className = 'heart-shape';
+    h.style.left = (Math.random() * 100) + '%';
+    h.style.animationDuration = (6 + Math.random() * 4) + 's';
+    h.style.opacity = 0.4 + Math.random() * 0.6;
+    container.appendChild(h);
+    setTimeout(() => h.remove(), 12000);
+  }
+  setInterval(() => {
+    for (let i = 0; i < 4; i++) {
+      const h = document.createElement('div');
+      h.className = 'heart-shape';
+      h.style.left = (Math.random() * 100) + '%';
+      h.style.animationDuration = (6 + Math.random() * 4) + 's';
+      h.style.opacity = 0.4 + Math.random() * 0.6;
+      container.appendChild(h);
+      setTimeout(() => h.remove(), 12000);
+    }
+  }, 2500);
+}
+</script>
+</body>
+</html>
