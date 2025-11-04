@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>С Днем Рождения, Мама!</title>
 <style>
-  /* Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Great+Vibes&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap');
 
   :root {
     --pink-1: #dbc1cc;
@@ -16,12 +15,13 @@
 
   body {
     margin: 0;
-    font-family: 'Noto Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: url('фон.jpg') center/cover no-repeat;
     overflow-x: hidden;
     position: relative;
   }
 
+  /* Размытие фона */
   body::before {
     content: "";
     position: fixed;
@@ -32,6 +32,7 @@
     z-index: -1;
   }
 
+  /* Конверт */
   .envelope-container {
     position: fixed; inset: 0;
     display: flex; align-items: center; justify-content: center; flex-direction: column;
@@ -80,6 +81,7 @@
     margin-top: 20px;
   }
 
+  /* Основной блок */
   .container {
     display: none;
     text-align: center;
@@ -140,6 +142,7 @@
 
   .music-btn:hover { transform: translateY(-3px); }
 
+  /* Галерея */
   .gallery {
     margin-top: 48px;
     display: flex;
@@ -176,6 +179,7 @@
     box-shadow: 0 20px 40px rgba(0,0,0,.28);
   }
 
+  /* Сердечки */
   .hearts {
     position: fixed;
     inset: 0;
@@ -239,26 +243,26 @@
   <h1>С Днем Рождения, Мама!</h1>
   <img src="family10.jpg" alt="Фото мамы" class="photo-mom">
 
-  <p class="lead">Дорогая мама, поздравляем вас с 55-летием! Пусть каждый день будет наполнен радостью, теплом и любовью. Мы бесконечно вас любим ❤️</p>
+  <p class="lead">Дорогая мама, тебе сегодня 55 — прекрасный возраст! Пусть каждый день будет наполнен любовью, светом и улыбками ❤️</p>
 
   <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎶 Включить музыку</button>
-  <audio id="music" src="happy-birthday-401919.mp3" preload="auto" loop></audio>
+  <audio id="music" src="Qairat_Nurtas_Tugan_kun_2016.mp3" preload="auto" loop></audio>
 
   <div class="gallery">
-    <div class="gallery-title">Счастливые моменты вместе 💖</div>
-    <img src="family1.jpg" alt="Семейный момент 1">
-    <img src="family2.jpg" alt="Семейный момент 2">
-    <img src="family3.jpg" alt="Семейный момент 3">
+    <div class="gallery-title">Наши счастливые моменты 💖</div>
+    <img src="family1.jpg" alt="">
+    <img src="family2.jpg" alt="">
+    <img src="family3.jpg" alt="">
 
-    <div class="gallery-title">Моменты тепла нашей семьи 🌸</div>
-    <img src="family4.jpg" alt="Семейный момент 4">
-    <img src="family5.jpg" alt="Семейный момент 5">
-    <img src="family6.jpg" alt="Семейный момент 6">
+    <div class="gallery-title">Семейное тепло 🌸</div>
+    <img src="family4.jpg" alt="">
+    <img src="family5.jpg" alt="">
+    <img src="family6.jpg" alt="">
 
-    <div class="gallery-title">Мама, вы в нашем сердце 💞</div>
-    <img src="family7.jpg" alt="Семейный момент 7">
-    <img src="family8.jpg" alt="Семейный момент 8">
-    <img src="family9.jpg" alt="Семейный момент 9">
+    <div class="gallery-title">Мама — наше вдохновение 💞</div>
+    <img src="family7.jpg" alt="">
+    <img src="family8.jpg" alt="">
+    <img src="family9.jpg" alt="">
   </div>
 </div>
 
@@ -302,4 +306,3 @@ function createHearts() {
 </script>
 </body>
 </html>
-
